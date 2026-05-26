@@ -41,4 +41,4 @@ console.log(Math.random())                      // always betweedn 0 and 1
 const min = 20
 const max = 30
 
-console.log(Math.floor((Math.random()*(max-min+1))+min))
+console.log(Math.floor((Math.random()*(max-min+1))+min))08
