@@ -1,4 +1,4 @@
-const arr = [32 , 4 , 53 , 098 , true , "dxfgchjk"]
+const arr = [32 , 4 , 53 , 98 , true , "dxfgchjk"]
 console.log(arr)
 
 const arr2 = new Array(232,"32w4",5342,543)
