@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Create Elements</title>
+    </head>
+    <body style="background-color: black;color: whitesmoke;">
+        
+    </body>
+    <script>
+//         const div = document.createElement("div")
+//         console.log(div)
+// //                    <div></div>
+//         div.className = "main"
+// //                  <div class="main"></div>
+//         div.id = "MyId"
+// //                  <div class="main" id="MyId"></div>
+//         div.setAttribute("title","firstTitle")
+// //                  <div class="main" id="MyId" title="firstTitle"></div>
+//         div.style.backgroundColor = "blue"
+//         div.style.padding = "10px"
+//         div.innerText = "Hala Madrid"
+
+// //                  till now it wont't appear on the webpage , we'll need to attach it
+//         document.body.appendChild(div)
+        
+
+        const createTeam = function(team,bgcolor){
+            const div = document.createElement("div")
+        console.log(div)
+        div.className = "main"
+        div.id = "MyId"
+        div.setAttribute("title",`${team}`)
+        div.style.backgroundColor = `${bgcolor}`
+        div.style.padding = "10px"
+        div.innerText = `${team}`
+        document.body.appendChild(div)
+        }
+        const teams = ["Real Madrid" , "Bayern Munich" , "Chelsea" , "AC MILAN" , "Manchester United" ]
+        const color = ["black","red", "blue" , "darkred" , "red"]
+        teams.push("Inter Milan")
+        color.push("Darkblue")
+        teams.forEach(element => {
+            createTeam(element,color[teams.indexOf(element)])
+        });
+        
+    </script>
+</html>

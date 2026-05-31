@@ -1,0 +1,30 @@
+*{
+    margin:0%;
+    padding:0%;
+    box-sizing: border-box;
+}
+
+html,body{
+   height:100%;
+    width:100%;
+    color: rgb(226, 216, 216);
+    background-color: #212121;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 100px;
+    gap: 20px;
+    font-family: sans-serif;
+}
+.container p{
+    margin: 20px;
+}
+#results{
+    margin: 15px;
+    font-family: sans-serif;
+    font-size: x-large;
+    margin-left: 100px;
+    
+}
