@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <ul>
+            <li id = "madrid">MADRID</li>
+            <li id=""bayern>BAYERN</li>
+            <li>MILAN</li>
+            <li>MANU</li>
+        </ul>
+    </body>
+    <script>
+        const links = document.querySelector("ul")
+        const madrid = document.querySelector("#madrid")
+
+        // there are two types of event propagation , event bubbling and capturing
+        // bubbling works inside to outside and capturing goes opposite
+        // bubbling uses false and capturing uses true, if there's no t or f then false is the default
+        links.addEventListener("click",(e)=>{
+            console.log("ul clicked")
+        },true)
+        madrid.addEventListener("click",(e)=>{
+            console.log("madrid clicked")
+        },true)
+        // if there's false "madrid clicked" will appear first
+
+        // this is done to : ex:
+        bayern.addEventListener("click",(e)=>{
+            console.log("bayern clicked")
+            e.stopPropagation();
+        },true)
+        // here we stopped the bayern clicked msg , we could've done that to the ul clicked msg too if it was false
+        
+
+    </script>
+</html>

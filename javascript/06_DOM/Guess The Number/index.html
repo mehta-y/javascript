@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Guess The Number</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <h1>Guess The Number</h1>
+        <h3>Try and guess a random number between 1 to 200</h3>
+        <h3>You have 10 attempt at max</h3>
+        <form>
+            <label for="guessfield" id="guess">Guess a number</label>
+            <input type="text" id="guessfield" class="guessfield" placeholder="Enter the number">
+            <input type="submit" id="sbt" class="sbt" value="Submit Guess">
+        </form>
+        <div class="results">
+            <p>Previous Guesses : <span class="guesses"><h3></h3></span></p>
+            <p>Guesses Remaining : <span class="lastguess"><h3></h3></span></p>
+            <p class="LOWorHIGH"></p>
+        </div>
+    </body>
+    <script src="script.js"></script>
+</html>
