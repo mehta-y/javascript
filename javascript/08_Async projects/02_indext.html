@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body style="background-color: black;color: #ffff;">
+        <h1>BG color will change every second. PRESS START</h1>
+        <button id="start" style="width: 70px; height: 20px;">Start</button>
+        <button id="stop" style="width: 70px; height: 20px;">Stop</button>
+    </body>
+    <script>
+        const randomcolor = function(){
+            let hex ="0123456780ABCDEF"
+            let color = "#"
+            for(i=0;i<6;i++){
+                color += hex[Math.floor(Math.random()*16)]
+            }
+            return color;
+        }
+         const randomcolor2 = function(){
+            let hex ="0123456780ABCDEF"
+            let color = "#"
+            for(i=0;i<6;i++){
+                color += hex[Math.floor(Math.random()*16)]
+            }
+            return color;
+        }
+        const body = document.querySelector("body")
+        const start = document.querySelector("#start")
+        const stop = document.querySelector("#stop")
+
+
+        let startchanging
+        const changecolor = function(){
+            if(!startchanging){
+                startchanging = setInterval(()=>{
+                    body.style.backgroundColor = randomcolor();
+                    body.style.color = randomcolor2();
+                },500)
+            }
+        }
+        const stopcolorchange = function(){
+            clearInterval(startchanging)
+            startchanging=null;                   //ye na krte to dobara lagataar start dabane k baad problem aajata
+            
+            
+        }
+
+        start.addEventListener("click",changecolor)
+        stop.addEventListener("click",stopcolorchange)
+        
+    </script>
+</html>

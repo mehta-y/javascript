@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body style="background-color: black;color: rgb(236, 53, 2);">
+        <h1>Har Har MODI</h1>
+        <button id="start" style="width: 70px; height: 20px;">Start</button>
+        <button id="stop" style="width: 70px; height: 20px;">Stop</button>
+        <h2 style="color: orange;"></h2>
+
+    </body>
+    <script>
+        const body = document.querySelector("body")
+        const h2 = document.querySelector("h2")
+        const modi = document.querySelector("h1")
+        const changetext = setTimeout(()=>{
+            modi.innerHTML= "Ghar Ghar MODI"
+        },5000)
+        const stop = document.querySelector("#stop")
+        stop.addEventListener("click",()=>{
+            clearTimeout(changetext)
+        })
+        const start = document.querySelector("#start")
+        let shloka
+        start.addEventListener("click",()=>{
+            if(!shloka){                     // to prevent disturbance mentioned below
+                shloka = setInterval(()=>{
+                const arr = ["Anghen Ghatram , ","Nayne Vaktam , ","Nyaye Narajyam , ","LAWDEN BHOJYAM"]
+                arr.forEach((element,index) => {
+                    setTimeout(()=>{
+                        h2.innerHTML += element
+                        if(index === arr.length-1){
+                            h2.innerHTML += '<br>'
+                        }
+                    },index*1000)
+                });
+            },4000)
+            }
+        })
+        stop.addEventListener("click",()=>{
+            clearInterval(shloka)
+            shloka = null         // to prevent disturbance of project when start button is clicked several time
+        })
+    </script>
+</html>
