@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body style="background-color: #212121;">
+        The XMLHttpRequest.readyState property returns the state an XMLHttpRequest client is in. An XHR client exists in one of the following states:
+        Value	State	Description <br>
+        0	UNSENT:	Client has been created. open() not called yet. <br>
+        1	OPENED:	open() has been called. <br>
+        2	HEADERS_RECEIVED:	send() has been called, and headers and status are available. <br>
+        3	LOADING: Downloading; responseText holds partial data. <br>
+        4	DONE:	The operation is complete.
+    </body>
+    <script>
+        const requestURL = "https://api.github.com/users/hiteshchoudhary"
+        const xhr = new XMLHttpRequest()
+        // it is now an object
+        console.log(typeof xhr)
+        xhr.open('get',requestURL)
+        xhr.onreadystatechange = function(){
+            console.log(xhr.readyState)
+            // to print the current state
+            // as everyhing will start working after it reaches the stage 4
+            if(xhr.readyState===4){
+                // console.log(this.responseText)
+                // will the entire data in a way
+                const data = this.responseText
+                console.log(data)
+                console.log(typeof data)
+                // it is a string type as most of the API responses are in string type
+                const newData = JSON.parse(data)
+                // it is actually a json data. parse is a method used to convert string to json. it acts like an object but is a json datatype
+                console.log(newData.followers)
+            }
+        }
+        xhr.send()
+        // this is like the start button. it sends the request
+    </script>
+</html>
